@@ -2,11 +2,14 @@
 Busca y copia o mueve archivos de acuerdo a su extensión.
 
 # Ejecución
-> py main.py
+Desde la consola de comandos, navegar hasta donde se encuentra la carpeta con los archivos y luego ejecutar lo siguiente:
+`py main.py`
 
 # Compilar a .exe
-> pip install pyinstaller
+Así como en el apartado anterior, navegue hasta la carpeta donde se encuentran los archivos y ejecute lo siguiente si no tiene instalado 'pyinstaller':
+`pip install pyinstaller`
 
-> pyinstaller main.py -F -n Copy-Move
+Finalmente, ejecute lo siguiente:
+`pyinstaller main.py -F -n Copy-Move`
 
 El archivo compilado se encuentra en la carpeta 'dist'.
