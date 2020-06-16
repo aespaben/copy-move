@@ -2,6 +2,11 @@ from pathlib import Path
 from shutil import copy
 from os import rename, listdir
 
+#############################################
+# Busca archivos extensiones específicas 
+# recursivamente dentro de un directorio y 
+# sus subcarpetas.
+#############################################
 def recursive_search(path, ext = [], _elements = []):
   ext = [x.lower() for x in ext]
 
@@ -20,7 +25,11 @@ def recursive_search(path, ext = [], _elements = []):
   
   return _elements
 
-
+#############################################
+# Recibe una lista de archivos y devuelve
+# una tupla con los archivos únicos
+# y los archivos duplicados.
+#############################################
 def separate_duplicates(original_files):
   bag = set()
   duplicated = []
@@ -35,7 +44,11 @@ def separate_duplicates(original_files):
 
   return files, duplicated
 
-
+#############################################
+# Recibe una lista de archivos, los renombra
+# automáticamente y les aplica una operación
+# al destino especificado.
+#############################################
 def auto_rename_and_apply(original_files, dst, op):
   files = original_files.copy()
   renamed_files = []
@@ -55,7 +68,9 @@ def auto_rename_and_apply(original_files, dst, op):
 
   return True
 
-
+#############################################
+# Copia un archivo al destino especificado.
+#############################################
 def copy_to(file, dst):
   try:
     print(f'Copiando {file.name}...', end=' ')
@@ -67,6 +82,9 @@ def copy_to(file, dst):
 
   return True
 
+#############################################
+# Mueve un archivo al destino especificado.
+#############################################
 def move_to(file, dst):
   try:
     print(f'Moviendo {file.name}...', end=' ')
@@ -78,6 +96,10 @@ def move_to(file, dst):
   
   return True
 
+#############################################
+# Aplica una operación a todos los archivos
+# de una lista.
+#############################################
 def apply_all(files, dst, op):
   if len(listdir(dst)):
     print('El destino debe estar vacío')
