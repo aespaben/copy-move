@@ -15,4 +15,4 @@ Finalmente, ejecute lo siguiente:
 
 `pyinstaller main.py -F -n Copy-Move`
 
-El archivo compilado se encuentra en la carpeta 'dist'.
+El archivo compilado se encontrará en la carpeta 'dist'.
