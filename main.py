@@ -1,4 +1,4 @@
-from operations import *
+from operations import apply_all, auto_rename_and_apply, copy_to, move_to, recursive_search, separate_duplicates
 
 def action(act, op):
   word = ''

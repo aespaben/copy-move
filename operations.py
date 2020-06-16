@@ -1,6 +1,8 @@
-def recursive_search(path, ext = [], _elements = []):
-  from pathlib import Path
+from pathlib import Path
+from shutil import copy
+from os import rename, listdir
 
+def recursive_search(path, ext = [], _elements = []):
   ext = [x.lower() for x in ext]
 
   try:
@@ -35,8 +37,6 @@ def separate_duplicates(original_files):
 
 
 def auto_rename_and_apply(original_files, dst, op):
-  from pathlib import Path
-
   files = original_files.copy()
   renamed_files = []
   new_file_name = ''
@@ -57,9 +57,6 @@ def auto_rename_and_apply(original_files, dst, op):
 
 
 def copy_to(file, dst):
-  from shutil import copy
-  from pathlib import Path
-
   try:
     print(f'Copiando {file.name}...', end=' ')
     copy(file, Path(dst))
@@ -71,9 +68,6 @@ def copy_to(file, dst):
   return True
 
 def move_to(file, dst):
-  from pathlib import Path
-  from os import rename
-
   try:
     print(f'Moviendo {file.name}...', end=' ')
     rename(file, Path(dst))
@@ -85,8 +79,6 @@ def move_to(file, dst):
   return True
 
 def apply_all(files, dst, op):
-  from os import listdir
-  
   if len(listdir(dst)):
     print('El destino debe estar vacío')
     return False
